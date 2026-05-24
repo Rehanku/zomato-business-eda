@@ -9,7 +9,7 @@ I wanted to practice exploratory data analysis on a real-world business dataset,
 
 ## The Data Pipeline
 1. **Rate Column Cleanup** > The `rate` column was a mess — values like `4.1/5`, `NEW`, `-`, and empty strings all mixed together. I stripped the `/5` suffix, converted to numeric, and treated `NEW` and `-` as missing. This was by far the most annoying part.
-2. **Missing Values & Cost Conversion** > Dropped rows with no rating (about 7k+). For `approx_cost(for two people)`, removed commas and converted to float so it could be used in analysis.
+2. **Missing Values & Cost Conversion** > Ran a null value audit before cleaning. Dropped rows with no rating (dropped ~15.0% of data). For `approx_cost(for two people)`, removed commas and converted to float.
 3. **Feature Engineering** > Created a few extra columns like `listed_in(type)` split, and extracted the broad restaurant type for market share.
 4. **Geospatial Grouping** > Grouped by `location` (neighbourhood) to find saturated areas and then filtered for premium restaurants inside the most crowded locality.
 
@@ -22,6 +22,10 @@ I wanted to practice exploratory data analysis on a real-world business dataset,
 ### 2. Pricing Strategy: Cost vs Rating
 [![Cost vs Rating](screenshots/cost_vs_rating.png)](screenshots/cost_vs_rating.png)
 > There's a clear pattern: as the cost for two people goes up, the rating floor also rises. Cheap places can be hit or miss, but expensive restaurants almost never have truly terrible ratings. If you're charging a premium, you *have* to deliver on quality.
+
+### 2.5 The Voting & Correlation Factor
+[![Correlation](screenshots/correlation_heatmap.png)](screenshots/correlation_heatmap.png)
+> By running a correlation matrix on Rating, Cost, and Votes, we found that Votes have a much stronger positive correlation with Ratings than Cost does. A high price tag doesn't guarantee a 5-star review, but high engagement (votes) strongly correlates with top-tier ratings.
 
 ### 3. Geospatial Saturation: Top 10 Neighbourhoods
 [![Top Neighbourhoods](screenshots/top_neighbourhoods.png)](screenshots/top_neighbourhoods.png)
