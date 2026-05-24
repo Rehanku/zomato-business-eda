@@ -27,11 +27,15 @@ I wanted to practice exploratory data analysis on a real-world business dataset,
 [![Correlation](screenshots/correlation_heatmap.png)](screenshots/correlation_heatmap.png)
 > By running a correlation matrix on Rating, Cost, and Votes, we found that Votes have a much stronger positive correlation with Ratings than Cost does. A high price tag doesn't guarantee a 5-star review, but high engagement (votes) strongly correlates with top-tier ratings.
 
-### 3. Geospatial Saturation: Top 10 Neighbourhoods
+### 3. Service Impact: Delivery & Booking
+[![Service Impact](screenshots/service_impact.png)](screenshots/service_impact.png)
+> Restaurants that offer Table Booking have a noticeably higher average rating than those that don't. While Online Delivery also provides a slight rating bump, Table Booking acts as a strong proxy for premium dining experiences.
+
+### 4. Geospatial Saturation: Top 10 Neighbourhoods
 [![Top Neighbourhoods](screenshots/top_neighbourhoods.png)](screenshots/top_neighbourhoods.png)
 > BTM Layout has far more listed restaurants than any other locality. That means massive competition, but also huge footfall. The next few spots — Koramangala, HSR, JP Nagar — are also packed. An investor should look at these areas with caution unless they have a unique offering.
 
-### 4. Competitor Analysis: Premium Spots in BTM
+### 5. Competitor Analysis: Premium Spots in BTM
 [![Competitors in BTM](screenshots/btm_premium_table.png)](screenshots/btm_premium_table.png)
 > After zooming into BTM and filtering for premium dining (cost > 1000), I pulled the actual top 10 restaurants. This is the kind of output you'd hand to a business stakeholder — it lists names, ratings, and cost, so they can immediately see who they're up against.
 
